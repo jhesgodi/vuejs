@@ -9,14 +9,12 @@
 </head>
 <body>
   <div id="app">
-    <form>
-      <span class="error" v-show="!message">
-        You must enter a message
-      </span>
-      <textarea v-model="message"></textarea>
-      <br>
-      <button type="submit" v-if="message">
-        Send message
+    <form action="done.html" @submit.prevent="handleIt">
+    <!-- <form action="done.html" v-on:submit="handleIt"> -->
+    <!-- <form action="done.html" v-on:submit.prevent="handleIt"> -->
+    <!-- <form action="done.html" v-on:submit.stop="handleIt"> -->
+      <button type="submit">
+        Submit me!
       </button>
     </form>
 
@@ -29,8 +27,10 @@
   <script>
     new Vue({
       el: '#app',
-      data: {
-        message: ''
+      methods: {
+        handleIt: function () {
+          alert('Handled');
+        }
       }
     });
   </script>

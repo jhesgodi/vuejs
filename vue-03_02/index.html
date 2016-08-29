@@ -5,20 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+  <link rel="stylesheet" href="style.css">
+
   <title>Document</title>
 </head>
 <body>
   <div id="app">
-    <form>
-      <span class="error" v-show="!message">
-        You must enter a message
-      </span>
-      <textarea v-model="message"></textarea>
-      <br>
-      <button type="submit" v-if="message">
-        Send message
-      </button>
-    </form>
+    <!-- <button type="submit" @click="incrementCounter">  -->
+    <button type="submit" @click="this.count += 1"> 
+      Increment counter: {{ count }}
+    </button>
 
     <pre>
       {{ $data | json }}
@@ -30,7 +26,12 @@
     new Vue({
       el: '#app',
       data: {
-        message: ''
+        count: 0
+      },
+      methods: {
+        incrementCounter: function () {
+          this.count += 1;
+        }
       }
     });
   </script>
