@@ -1,0 +1,28 @@
+.alert {
+  position: relative;
+  background-color: #c5c5c5;
+  border: 1px solid #7f848a;
+  padding: 1em;
+}
+
+.alert.__success {
+  position: relative;
+  background-color: #9aca95;
+  border: 1px solid #6c9e66;
+  padding: 1em;
+}
+
+.alert.__error {
+  position: relative;
+  background-color: #ea3535;
+  border: 1px solid #9a2626;
+  padding: 1em;
+}
+
+.alert .close-btn {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  cursor: pointer;
+  font-weight: bold;
+}
