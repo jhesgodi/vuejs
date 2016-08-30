@@ -12,20 +12,31 @@
 <body>
   <div id="app">
     <tasks :list="tasks"></tasks>
-    <tasks :list="tasks"></tasks>
-    <tasks :list="tasks"></tasks>
   </div>
 
   <template id="tasks-template">
-    <ul>
+    <h1>
+      My tasks
+      <span v-show="remaining">({{ remaining }})</span>
+    </h1>
+    <ul class="task-list" v-show="list.length">
       <li
         :class="['task', { 'done': task.done }]"
         v-for="task in list"
         @click="toggleDoneFor(task)"
       >
         {{ task.body }}
+        <span
+          class="close-btn"
+          @click="removeTask(task)"
+        >
+        </span>
       </li>
     </ul>
+    <p v-else>No tasks yet!.</p>
+    <input type="text" v-model="newTask" @keyup.enter="addTask" placeholder="Enter a new task">
+    <button @click="addTask">add</button>
+    <button @click="clearDone">clear</button>
   </template>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.26/vue.js"></script>
