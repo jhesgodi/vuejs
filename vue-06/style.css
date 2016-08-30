@@ -1,0 +1,12 @@
+.Plan > span {
+  display: inline-block;
+  min-width: 100px;
+}
+
+.__name {
+  font-weight: bold;
+}
+
+.__price {
+  font-style: italic;
+}
