@@ -13,8 +13,9 @@
   <div id="app">
     <ul>
       <li
+        :class="['task', { 'done': task.done }]"
         v-for="task in tasks"
-        :class=" "
+        @click="toggleDoneFor(task)"
       >
         {{ task.body }}
       </li>
